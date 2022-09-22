@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - VARIANT=17-bullseye
+      - INSTALL_MAVEN=true
+      - MAVEN_VERSION=3.8.6
+      - INSTALL_GRADLE=false
+    tty: true
+    volumes:
+      - ../src:/src
+    user: developer
